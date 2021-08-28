@@ -1,0 +1,8 @@
+<?php 
+ 
+class M_profil extends CI_Model{
+	function tampil_data(){
+		// return $this->db->get('siswa');
+	}
+}
+?>
