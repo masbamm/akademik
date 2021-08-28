@@ -9,7 +9,8 @@ class Login extends CI_Controller{
 	}
  
 	function index(){
-		$this->load->view('v_login');	}
+		$this->load->view('v_login');	
+	}
  
 	function aksi_login(){
 		$username = $this->input->post('username');
@@ -31,7 +32,7 @@ class Login extends CI_Controller{
 				);
 
 			$this->session->set_userdata($data_session);
-			redirect(base_url("dashboard"));
+			redirect(base_url("admin"));
  
 			}else if($key->hak_akses=="siswa"){
 				
@@ -42,13 +43,14 @@ class Login extends CI_Controller{
 				);
  
 			$this->session->set_userdata($data_session);
-			redirect(base_url("dashboard"));
+			redirect(base_url("admin"));
 			}
  
 		}
 		}else{
-			$this->load->view('alert');
-		
+			$message = "Username and/or Password incorrect.\\nTry again.";
+ 			echo "<script type='text/javascript'>alert('$message');</script>";
+			$this->load->view('v_login');	
 		}
 	}
  

@@ -293,13 +293,3 @@ input[type=text]:placeholder {
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
-
-<script type="text/javascript">
-
-<?php }else if($this->session->flashdata('error')){  ?>
-    toastr.error("<?php echo $this->session->flashdata('error'); ?>"); 
-
-</script>
